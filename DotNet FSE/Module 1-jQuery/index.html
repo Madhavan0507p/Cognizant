@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>jQuery Exercises</title>
+  <style>
+    .box {
+      width: 80px;
+      height: 80px;
+      background-color: teal;
+      margin: 5px;
+      display: inline-block;
+    }
+    #colorBox {
+      width: 150px;
+      height: 150px;
+      background-color: white;
+      border: 1px solid #000;
+      margin-top: 10px;
+      line-height: 150px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Original Heading</h1>
+
+  <p>Paragraph 1: This is the first paragraph.</p>
+  <p>Paragraph 2: This is the second paragraph.</p>
+
+  <button id="hideParaBtn">Hide 1st Paragraph</button>
+
+  <hr />
+
+  <!-- Boxes for Exercise 3 -->
+  <div class="box" id="box1"></div>
+  <div class="box" id="box2"></div>
+  <div class="box" id="box3"></div><br />
+
+  <button id="hideBtn">Hide Boxes</button>
+  <button id="showBtn">Show Boxes</button>
+  <button id="fadeOutBtn">Fade Out Boxes</button>
+  <button id="fadeInBtn">Fade In Boxes</button>
+  <button id="toggleBtn">Toggle Boxes</button>
+  <button id="chainBtn">Slide Up/Down Boxes</button>
+
+  <hr />
+
+  <!-- Form for Exercise 4 -->
+  <form id="addItemForm">
+    <input type="text" id="itemInput" placeholder="Add item" required />
+    <button type="submit">Add Item</button>
+  </form>
+  <button id="removeAllBtn">Remove All Items</button>
+  <ul id="itemList"></ul>
+
+  <hr />
+
+  <!-- For Exercise 5 -->
+  <button id="colorBtn">Change Color</button>
+  <div id="colorBox">Box</div>
+
+  <hr />
+
+  <!-- For Exercise 6 -->
+  <div id="mouseBox" style="width:150px; height:100px; background:#ccc; margin-top:10px; text-align:center; line-height:100px; font-weight:bold;">
+    Hover or Click Me
+  </div>
+  <input type="text" id="keyInput" placeholder="Type here and press keys" />
+
+  <hr />
+
+  <!-- Exercise 1: Hello World -->
+  <p id="helloWorld">Hello World!</p>
+
+  <!-- jQuery inclusion -->
+  <!-- 1) CDN link (recommended, uncomment to use) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- 2) Local copy (uncomment if you have jquery.min.js downloaded locally) -->
+  <!-- <script src="jquery.min.js"></script> -->
+
+  <script>
+    // Exercise 1: Log Hello World using jQuery
+    $(document).ready(function() {
+      console.log($("#helloWorld").text());
+
+      // Exercise 2: Change h1 text and hide first paragraph on button click
+      $("h1").text("Updated Heading with jQuery");
+      $("#hideParaBtn").click(() => $("p:first").hide());
+
+      // Exercise 3: jQuery methods on .box elements
+      $("#hideBtn").click(() => $(".box").hide());
+      $("#showBtn").click(() => $(".box").show());
+      $("#fadeOutBtn").click(() => $(".box").fadeOut());
+      $("#fadeInBtn").click(() => $(".box").fadeIn());
+      $("#toggleBtn").click(() => $(".box").toggle());
+      $("#chainBtn").click(() => $(".box").slideUp().delay(1000).slideDown());
+
+      // Exercise 4: Add and remove list items dynamically
+      $("#addItemForm").submit(function(e) {
+        e.preventDefault();
+        const val = $("#itemInput").val().trim();
+        if(val) {
+          $("#itemList").append(`<li>${val}</li>`);
+          $("#itemInput").val("");
+        }
+      });
+      $("#removeAllBtn").click(() => $("#itemList").empty());
+
+      // Exercise 5: Change colorBox background on click/double-click
+      $("#colorBtn").click(() => $("#colorBox").css("background-color", "red"));
+      $("#colorBox").dblclick(() => $("#colorBox").css("background-color", "white"));
+
+      // Exercise 6: Mouse and keyboard event helpers
+      $("#mouseBox").click(() => {
+        $("#mouseBox").css("background-color", "yellow").text("Clicked!");
+      });
+      $("#mouseBox").dblclick(() => {
+        $("#mouseBox").css("background-color", "orange").text("Double Clicked!");
+      });
+      $("#mouseBox").mouseenter(() => {
+        $("#mouseBox").css("background-color", "lightgreen").text("Mouse Enter");
+      });
+      $("#mouseBox").mouseleave(() => {
+        $("#mouseBox").css("background-color", "#ccc").text("Hover or Click Me");
+      });
+
+      $("#keyInput").keypress(function(e) {
+        const char = String.fromCharCode(e.which);
+        $(this).val($(this).val() + char.toUpperCase());
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+</html>

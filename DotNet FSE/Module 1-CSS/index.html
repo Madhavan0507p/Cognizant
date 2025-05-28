@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Local Community Event Portal</title>
+
+    <!-- 1. Internal CSS: embedded style tag -->
+    <style>
+        /* Body background color */
+        body {
+            background-color: #f0f8ff; /* AliceBlue */
+        }
+
+        /* 3. Selectors Playground */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Element selector for all h2 */
+        h2 {
+            font-family: 'Arial', sans-serif;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        /* ID selector for main header banner */
+        #mainHeader {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* Class selector for event cards */
+        .eventCard {
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        /* Grouping selector for h3 and p */
+        h3, p {
+            font-family: 'Verdana', sans-serif;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* 4. Color & Background Styling */
+        body {
+            background-image: url('images/cityscape.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #e6f0ff; /* fallback color */
+        }
+
+        /* Gradient background for section headers */
+        section > h2 {
+            background: linear-gradient(90deg, #004080, #007BFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 5. Typography */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .description {
+            text-align: justify;
+            text-transform: none;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
+            font-style: normal;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        /* 6. Link and List Styling */
+        a:link {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #0056b3;
+        }
+
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #00264d;
+        }
+
+        nav ul {
+            list-style-type: none;
+            list-style-position: inside;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav li {
+            padding: 5px 10px;
+        }
+
+        /* 7. Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #007BFF;
+            padding: 10px;
+            background-color: #f9faff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e6f0ff;
+        }
+
+        /* 8. Box Model & Layout */
+        .eventCard {
+            border: 2px solid #007BFF;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        input:focus {
+            outline: 3px solid #007BFF;
+        }
+
+        /* 9. Multiple Columns */
+        .news-article {
+            column-count: 2;
+            column-gap: 30px;
+            column-rule: 1px solid gray;
+            margin: 20px;
+            padding: 10px;
+            background-color: #ffffffcc;
+            border-radius: 8px;
+        }
+
+        /* 10. Responsive Web Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                padding: 10px 0;
+            }
+
+            img.responsive-img {
+                width: 100%;
+                height: auto;
+            }
+
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <!-- 1. External stylesheet link -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- 1. Inline style: heading red -->
+    <h1 style="color: red;">Local Community Event Portal</h1>
+
+    <!-- Banner -->
+    <header id="mainHeader">
+        Welcome to Our Community Events!
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <div class="eventCard">
+            <h3>Spring Festival</h3>
+            <p class="description">Celebrate the arrival of spring with live music, food stalls, and crafts.</p>
+        </div>
+        <div class="eventCard">
+            <h3>Community Cleanup</h3>
+            <p class="description">Join us in keeping our neighborhood clean and green.</p>
+        </div>
+
+        <!-- Events Admin Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Spring Festival</td>
+                    <td>May 15, 2025</td>
+                    <td>Central Park</td>
+                </tr>
+                <tr>
+                    <td>Community Cleanup</td>
+                    <td>May 22, 2025</td>
+                    <td>Main Street</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- News Section -->
+    <section id="news">
+        <h2>Community Bulletin</h2>
+        <article class="news-article">
+            <p>The city council has approved new funding for local parks, with improvements planned over the next year.</p>
+            <p>Volunteers are needed for the summer youth programs; applications open until June 1st.</p>
+            <p>Don't forget to attend the annual town hall meeting on June 10th to voice your opinions.</p>
+        </article>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" /><br /><br />
+
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" /><br /><br />
+
+            <label for="message">Message:</label><br />
+            <textarea id="message" name="message"></textarea><br /><br />
+
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
