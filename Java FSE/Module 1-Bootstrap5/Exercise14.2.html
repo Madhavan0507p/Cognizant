@@ -1,0 +1,39 @@
+<!-- ex14-2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Sidebar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    .sidebar {
+      width: 200px;
+      background-color: #343a40;
+      color: white;
+      padding: 1rem;
+    }
+    .content {
+      flex-grow: 1;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar d-none d-md-block">
+    <h4>Sidebar</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item"><a href="#" class="nav-link text-white">Dashboard</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white">Settings</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h1>Main Content</h1>
+    <p>This content area is always visible. Sidebar shows only on md+ screens.</p>
+  </div>
+</body>
+</html>

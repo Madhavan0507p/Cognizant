@@ -1,0 +1,192 @@
+/* styles.css */
+
+/* 1. External CSS styles for body */
+body {
+  background-color: #f0f8ff; /* fallback */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 20px;
+  line-height: 1.6;
+}
+
+/* 2. Header styles */
+#mainHeader {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #d4f1f9;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* 3. Reset margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 3. Style all h2 elements */
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  margin-top: 30px;
+
+  /* 4. Gradient text for h2 */
+  background: linear-gradient(90deg, #0066cc, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3. Class selector for event cards */
+.eventCard {
+  border: 2px solid #007BFF;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #ffffffcc;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+/* 3. Grouping selector for h3 and p */
+h3, p {
+  font-family: Georgia, serif;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* 5. Typography */
+h1, h2 {
+  font-weight: 700;
+}
+
+p.description {
+  font-style: italic;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  line-height: 1.8;
+  text-transform: capitalize;
+}
+
+/* 6. Link styles */
+a:link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+a:active {
+  color: #ff0000;
+}
+
+/* 6. Navigation list styles */
+nav ul {
+  list-style-type: none; /* remove bullets */
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+  background: #e3f2fd;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+nav ul li {
+  padding: 10px 15px;
+}
+
+/* 7. Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 20px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffffcc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+thead {
+  background-color: #007BFF;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* 8. Box Model & Layout Control */
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid #00ccff;
+}
+
+/* Visibility */
+.hidden-visibility {
+  visibility: hidden; /* invisible but takes space */
+}
+.hidden-display {
+  display: none; /* removed from layout */
+}
+
+/* 9. Multiple Columns in text */
+.news-article {
+  column-count: 2;
+  column-gap: 30px;
+  column-rule: 1px solid gray;
+  margin: 20px auto;
+  max-width: 700px;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  background-color: #ffffffcc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* 10. Responsive Web Design */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* stack nav links vertically */
+    padding-left: 0;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  nav ul li {
+    padding: 10px 0;
+  }
+  body {
+    font-size: 14px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .news-article {
+    column-count: 1;
+  }
+}

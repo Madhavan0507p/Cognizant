@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Local Community Event Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="pageLoaded()">
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a> |
+    <a href="#events">Events</a> |
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Welcome -->
+  <h1 id="home">Welcome to the Community Portal</h1>
+
+  <!-- Event List -->
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div id="eventContainer"></div>
+  </section>
+
+  <!-- Register -->
+  <section>
+    <h3>Register for an Event</h3>
+    <form id="registerForm">
+      <label>Name: <input type="text" name="name" required /></label><br />
+      <label>Email: <input type="email" name="email" required /></label><br />
+      <label>
+        Event:
+        <select name="event" onchange="savePreference(this.value)" required>
+          <option value="">Select Event</option>
+          <option value="Music Fest">Music Fest</option>
+          <option value="Book Fair">Book Fair</option>
+        </select>
+      </label><br />
+      <button type="submit" id="registerBtn">Register</button>
+    </form>
+    <div id="feedback"></div>
+  </section>
+
+  <!-- Search -->
+  <section>
+    <h3>Search Events</h3>
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+  </section>
+
+  <!-- Nearby -->
+  <section>
+    <button onclick="findNearby()">Find Nearby Events</button>
+    <div id="locationInfo"></div>
+  </section>
+
+  <!-- Video -->
+  <section>
+    <h3>Promo Video</h3>
+    <video width="300" controls oncanplay="videoReady()">
+      <source src="promo.mp4" type="video/mp4" />
+    </video>
+    <div id="videoStatus"></div>
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
